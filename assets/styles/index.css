@@ -167,17 +167,66 @@ body {
 
 #tileContainer > .tile {
     width: 16rem;
-    height: 10rem;
-    background-color: #212121a0;
-    backdrop-filter: blur(0.75rem);
-    border-radius: 0.25rem;
     box-sizing: border-box;
     transform: scale(100%);
     transition-duration: 250ms;
     transition-property: transform;
     transition-timing-function: ease;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    justify-content: flex-start;
 }
 
 #tileContainer > .tile:hover {
     transform: scale(105%);
+}
+
+#tileContainer > .tile > .box {
+    background-color: #212121a0;
+    backdrop-filter: blur(0.75rem);
+    border-radius: 0.25rem;
+}
+
+#tileContainer > .tile > .title {
+    color: #e0e0e0;
+    padding: 0.5rem 0.75rem;
+}
+
+#tileContainer > .tile > .content {
+    height: 10rem;
+    overflow: hidden auto;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#tileContainer > .tile > .content > .line {
+    border-bottom: 0.0625rem solid #424242c0;
+    padding: 0.5rem 0.75rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.375rem;
+    justify-content: flex-start;
+}
+
+#tileContainer > .tile > .content > .line > .spring {
+    flex-grow: 1;
+}
+
+#tileContainer > .tile.mlb > .content > .line > .logo {
+    width: 2rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+#tileContainer > .tile.mlb > .content > .line > .score {
+    font-size: 0.9rem;
+    font-weight: 600;
 }

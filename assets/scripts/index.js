@@ -72,4 +72,37 @@
     }
 }
 
+{
+    const $tileContainer = document.getElementById('tileContainer');
+    const $mlbTile = $tileContainer.querySelector(':scope > .tile.mlb');
+    const $mlbTileContent = $mlbTile.querySelector(':scope > .content');
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) {
+            return;
+        }
+        if (xhr.status < 200 || xhr.status >= 300) {
+            return;
+        }
+        const response = JSON.parse(xhr.responseText);
+        for (const object of response) {
+            const $leftLogo = document.createElement('img');
+            $leftLogo.classList.add('logo', 'left');
+            $leftLogo.src = object['leftTeamLogo'];
+            const $leftName = document.createElement('span');
+            $leftName.classList.add('name', 'left');
+            $leftName.innerText = object['leftTeamName'];
+            const $leftScore = document.createElement('span');
+            $leftScore.classList.add('score', 'left');
+            $leftScore.innerText = object['leftTeamScore'];
+            const $spring = document.createElement('span');
+            $spring.classList.add('spring');
+
+        }
+    };
+    xhr.open('GET', 'http://192.168.4.252:8080/api/mlb');
+    xhr.send();
+    $mlbTileContent.innerHTML = '';
+}
+
 
