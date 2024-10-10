@@ -33,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0;
-    transition-duration: 500ms;
+    transition-duration: 3750ms;
     transition-property: opacity;
     transition-timing-function: ease;
     position: absolute;
