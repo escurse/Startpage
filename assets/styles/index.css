@@ -4,6 +4,8 @@
 body {
     width: 100vw;
     height: 100vh;
+    background-color: #212121;
+    color: #ffffff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,6 +14,11 @@ body {
     font-weight: 300;
     margin: 0;
     overflow: hidden;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #bg {
@@ -32,6 +39,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: brightness(50%);
     opacity: 0;
     transition-duration: 3750ms;
     transition-property: opacity;
