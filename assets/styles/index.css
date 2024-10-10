@@ -226,6 +226,13 @@ body {
     object-fit: contain;
 }
 
+#tileContainer > .tile.mlb > .content > .line > .name {
+    max-width: 2.75rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
 #tileContainer > .tile.mlb > .content > .line > .score {
     font-size: 0.9rem;
     font-weight: 600;

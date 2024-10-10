@@ -97,7 +97,19 @@
             $leftScore.innerText = object['leftTeamScore'];
             const $spring = document.createElement('span');
             $spring.classList.add('spring');
-
+            const $rightLogo = document.createElement('img');
+            $rightLogo.classList.add('logo', 'left');
+            $rightLogo.src = object['leftTeamLogo'];
+            const $rightName = document.createElement('span');
+            $rightName.classList.add('name', 'left');
+            $rightName.innerText = object['leftTeamName'];
+            const $rightScore = document.createElement('span');
+            $rightScore.classList.add('score', 'left');
+            $rightScore.innerText = object['leftTeamScore'];
+            const $line = document.createElement('span');
+            $line.classList.add('line');
+            $line.append($leftLogo, $leftName, $leftScore, $spring, $rightScore, $rightName, $rightLogo);
+            $mlbTileContent.append($line);
         }
     };
     xhr.open('GET', 'http://192.168.4.252:8080/api/mlb');
