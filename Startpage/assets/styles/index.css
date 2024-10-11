@@ -193,6 +193,7 @@ body {
 #tileContainer > .tile > .content {
     height: 10rem;
     overflow: hidden auto;
+    scrollbar-width: none;
 
     align-items: stretch;
     display: flex;
