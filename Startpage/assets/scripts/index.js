@@ -122,12 +122,16 @@
     const $tileContainer = document.getElementById('tileContainer');
     const $tile = $tileContainer.querySelector(':scope > .tile.weather');
     const $content = $tile.querySelector(':scope > .box.content');
+    const date = new Date();
+    const year = date.getFullYear()
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
     const url = new URL('https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst');
     url.searchParams.set('serviceKey', 'ubb+OlxX6eAciwn9CaiIjTmsvyt9xeGbp85/Lfcs2R8QhQMQjQ6uFIXGbgrx60fI4VmYtKoj5UkMGbIsBkaeew==');
     url.searchParams.set('nx', '89');
     url.searchParams.set('ny', '90');
     url.searchParams.set('dataType', 'JSON');
-    url.searchParams.set('base_date', '20241011');
+    url.searchParams.set('base_date', `${year}${month}${day}`);
     url.searchParams.set('base_time', '0830');
     url.searchParams.set('numOfRows', '60');
     const xhr = new XMLHttpRequest();
